@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { TeachersComponent } from './teachers.component';
-import { SubjectsComponent } from './subjects/subjects.component';
-import { StudentsComponent } from './students/students.component';
 
 import { MaterialDependenciesModule } from './material-dependencies.module';
 
+import { TeachersComponent } from './teachers.component';
+import { SubjectsComponent } from './subjects/subjects.component';
+import { StudentsComponent } from './students/students.component';
 
 const routes: Routes = [
   {
@@ -32,6 +32,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     TeachersComponent,
+    SubjectsComponent,
+    StudentsComponent,
   ],
   imports: [
     CommonModule,

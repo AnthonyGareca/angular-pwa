@@ -8,6 +8,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [],
@@ -21,6 +22,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatMenuModule,
     MatListModule,
     MatButtonModule,
+    MatCardModule,
   ]
 })
 export class MaterialDependenciesModule { }

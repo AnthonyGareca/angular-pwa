@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeachersComponent implements OnInit {
 
+  hasBackdrop: boolean = true;
+  mode: string =  "over";
+
   constructor() { }
 
   ngOnInit(): void {

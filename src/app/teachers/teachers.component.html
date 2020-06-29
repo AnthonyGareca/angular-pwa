@@ -1,7 +1,33 @@
 <section>
-  <ul>
-    <li><a [routerLink]=" [ 'subjects' ]">Subjects</a></li>
-    <li><a [routerLink]=" [ 'students' ]">Students</a></li>
-  </ul>
-  <router-outlet></router-outlet>
+  <mat-drawer-container hasBackdrop="{{hasBackdrop}}">
+
+    <mat-drawer #drawer mode="{{mode}}">
+      <mat-list role="list">
+        <mat-list-item role="listitem">
+          <button mat-flat-button [routerLink]=" [ 'subjects' ]" (click)="drawer.toggle()">Subjects</button>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <button mat-flat-button [routerLink]=" [ 'students' ]" (click)="drawer.toggle()">Students</button>
+        </mat-list-item>
+      </mat-list>
+    </mat-drawer>
+
+    <mat-drawer-content  class="container">
+      <mat-toolbar>
+        <button
+          mat-icon-button class="example-icon"
+          aria-label="Example icon-button with menu icon"
+          (click)="drawer.toggle()"
+        >
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>Teachers</span>
+        <span class="example-spacer"></span>
+      </mat-toolbar>
+
+      <router-outlet></router-outlet>
+
+    </mat-drawer-content>
+  </mat-drawer-container>
+
 </section>

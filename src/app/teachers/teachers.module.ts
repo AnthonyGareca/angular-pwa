@@ -5,13 +5,8 @@ import { TeachersComponent } from './teachers.component';
 import { SubjectsComponent } from './subjects/subjects.component';
 import { StudentsComponent } from './students/students.component';
 
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatSelectModule } from '@angular/material/select';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatListModule } from '@angular/material/list';
-import { MatButtonModule } from '@angular/material/button';
+import { MaterialDependenciesModule } from './material-dependencies.module';
+
 
 const routes: Routes = [
   {
@@ -40,13 +35,7 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    MatIconModule,
-    MatSelectModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatMenuModule,
-    MatListModule,
-    MatButtonModule,
+    MaterialDependenciesModule,
     RouterModule.forChild(routes),
   ]
 })

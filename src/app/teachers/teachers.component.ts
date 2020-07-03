@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouteItem } from '../model/RouteItem';
 
 @Component({
   selector: 'app-teachers',
@@ -7,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeachersComponent implements OnInit {
 
+  title: string =  "Teachers!";
+  routeItems: RouteItem[] = [
+    new RouteItem('Subjects', 'subjects'),
+    new RouteItem('Students', 'students'),
+  ];
   constructor() { }
 
   ngOnInit(): void {

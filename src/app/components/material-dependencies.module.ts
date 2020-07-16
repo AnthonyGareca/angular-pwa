@@ -9,7 +9,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [],
@@ -24,6 +24,7 @@ import { MatCardModule } from '@angular/material/card';
     MatListModule,
     MatButtonModule,
     MatCardModule,
+    MatDialogModule,
   ]
 })
 export class MaterialDependenciesModule { }

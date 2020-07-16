@@ -8,6 +8,8 @@ import { MaterialDependenciesModule } from '../components/material-dependencies.
 import { TeachersComponent } from './teachers.component';
 import { SubjectsComponent } from './subjects/subjects.component';
 import { StudentsComponent } from './students/students.component';
+import { CoursesComponent } from './courses/courses.component';
+import { CourseDialogComponent } from './course-dialog/course-dialog.component';
 
 const routes: Routes = [
   {
@@ -17,6 +19,10 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: 'subjects',
+      },
+      {
+        path: 'courses',
+        component: CoursesComponent,
       },
       {
         path: 'subjects',
@@ -35,6 +41,8 @@ const routes: Routes = [
     TeachersComponent,
     SubjectsComponent,
     StudentsComponent,
+    CoursesComponent,
+    CourseDialogComponent,
   ],
   imports: [
     CommonModule,

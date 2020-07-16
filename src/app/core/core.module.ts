@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { ShellComponent } from './shell/shell.component';
+import { InstallComponent } from './install/install.component';
+import { MatButtonModule } from '@angular/material/button';
 
 const routes: Routes = [
   {
@@ -29,9 +31,11 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     ShellComponent,
+    InstallComponent,
   ],
   imports: [
     CommonModule,
+    MatButtonModule,
     RouterModule.forRoot(routes),
   ],
   exports: [

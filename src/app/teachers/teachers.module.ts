@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
+import { CustomComponentsModule } from '../components/custom-components.module';
 import { MaterialDependenciesModule } from '../components/material-dependencies.module';
-import { LayoutComponent } from '../components/layout/layout.component';
 
 import { TeachersComponent } from './teachers.component';
 import { SubjectsComponent } from './subjects/subjects.component';
@@ -32,13 +32,13 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    LayoutComponent,
     TeachersComponent,
     SubjectsComponent,
     StudentsComponent,
   ],
   imports: [
     CommonModule,
+    CustomComponentsModule,
     MaterialDependenciesModule,
     RouterModule.forChild(routes),
   ]

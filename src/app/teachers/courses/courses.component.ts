@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CourseDialogComponent } from '../course-dialog/course-dialog.component';
+import { FirebaseService } from '../../services/firebase.service';
 
 @Component({
   selector: 'app-courses',
@@ -9,9 +10,22 @@ import { CourseDialogComponent } from '../course-dialog/course-dialog.component'
 })
 export class CoursesComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  courseList = [];
+
+  constructor(public dialog: MatDialog,
+    private firebase: FirebaseService) { }
 
   ngOnInit(): void {
+    this.firebase.getAll('courses').subscribe(coursesSnapshot => {
+      this.courseList = [];
+      coursesSnapshot.forEach(data => {
+        this.courseList.push({
+          id: data.payload.doc.id,
+          data: data.payload.doc.data(),
+        });
+      });
+      console.log(this.courseList)
+    });
   }
 
   openCourseDialog() {

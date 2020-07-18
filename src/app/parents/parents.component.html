@@ -1,7 +1,5 @@
-<section>
-  <ul>
-    <li><a [routerLink]=" [ 'dashboard' ]">Dashboard</a></li>
-    <li><a [routerLink]=" [ 'tasks' ]">Tasks</a></li>
-  </ul>
-  <router-outlet></router-outlet>
-</section>
+<app-layout
+  [title]="title"
+  [routeItems]="routeItems"
+  >
+</app-layout>

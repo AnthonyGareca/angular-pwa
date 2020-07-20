@@ -10,26 +10,39 @@ import { FirebaseService } from '../../services/firebase.service';
 })
 export class CoursesComponent implements OnInit {
 
-  courseList = [];
+  courseList;
 
   constructor(public dialog: MatDialog,
-    private firebase: FirebaseService) { }
+    private firebase: FirebaseService) {
+      this.courseList = [];
+    }
 
   ngOnInit(): void {
-    this.firebase.getAll('courses').subscribe(coursesSnapshot => {
-      this.courseList = [];
-      coursesSnapshot.forEach(data => {
-        this.courseList.push({
-          id: data.payload.doc.id,
-          data: data.payload.doc.data(),
+    this.firebase
+      .getAll('courses')
+      .subscribe(coursesSnapshot => {
+        this.courseList = [];
+        coursesSnapshot.forEach(data => {
+          this.courseList.push({
+            id: data.payload.doc.id,
+            data: data.payload.doc.data(),
+          });
         });
+        console.log(this.courseList)
       });
-      console.log(this.courseList)
-    });
   }
 
   openCourseDialog() {
-    this.dialog.open(CourseDialogComponent, { data: 'hi!' });
+    this.dialog
+      .open(
+        CourseDialogComponent,
+        { data: 'hi!' }
+      );
+  }
+
+  // TODO: look for a better way to navigate if it es possible
+  getQuestionnairesPath(id) {
+    return `${id}/questionnaires`;
   }
 
 }

@@ -22,7 +22,8 @@
 
   </div>
   <div>
-    <button mat-button>Cancel</button>
-    <button mat-button class="primary" (click)="saveCourse()">Save</button>
+    <button mat-button mat-dialog-close>Cancel</button>
+    <!-- TODO: Add logic to close dialog after save data -->
+    <button mat-button class="primary" (click)="saveCourse()" mat-dialog-close>Save</button>
   <div>
 </div>

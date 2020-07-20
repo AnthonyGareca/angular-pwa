@@ -1,25 +1,22 @@
 <section>
   <div class="courses-container">
     <mat-card
-      class="example-card"
-      *ngFor="let course of courseList"
-      [routerLink]=" [ getQuestionnairesPath(course.id) ] ">
+      class="example-card">
       <mat-card-header>
         <div mat-card-avatar class="header-image">
           <mat-icon>menu_book</mat-icon>
         </div>
-        <mat-card-title>{{course.data.name}}</mat-card-title>
-        <!-- TODO: create interfaces and a way to build courses -->
+        <mat-card-title>Questionary Test</mat-card-title>
         <mat-card-subtitle>
-          Math, Literature, Science Basic
+          Basic Literature
         </mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
         <p>
-          {{course.data.description}}
+          Questionary Description
         </p>
       </mat-card-content>
-      <!-- TODO: look for the best actions for a course -->
+      <!-- TODO: look for the best actions for a questionary -->
       <!-- <mat-card-actions class="buttons-container">
         <button mat-button>Students</button>
         <button mat-button>Subjects</button>
@@ -28,8 +25,7 @@
   </div>
 
   <div class="floating-action-buttons buttons-container">
-    <button mat-fab color="primary"
-      (click)="openCourseDialog()">
+    <button mat-fab color="primary">
       <mat-icon>add</mat-icon>
     </button>
   </div>

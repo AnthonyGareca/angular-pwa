@@ -11,6 +11,7 @@ import { SubjectsComponent } from './subjects/subjects.component';
 import { StudentsComponent } from './students/students.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CourseDialogComponent } from './course-dialog/course-dialog.component';
+import { QuestionnairesComponent } from './questionnaires/questionnaires.component';
 
 const routes: Routes = [
   {
@@ -19,11 +20,15 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'subjects',
+        redirectTo: 'courses',
       },
       {
         path: 'courses',
         component: CoursesComponent,
+      },
+      {
+        path: 'courses/:id/questionnaires',
+        component: QuestionnairesComponent,
       },
       {
         path: 'subjects',
@@ -44,6 +49,7 @@ const routes: Routes = [
     StudentsComponent,
     CoursesComponent,
     CourseDialogComponent,
+    QuestionnairesComponent,
   ],
   imports: [
     CommonModule,

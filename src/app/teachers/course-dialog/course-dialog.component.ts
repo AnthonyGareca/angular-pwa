@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FirebaseService } from '../../services/firebase.service';
 @Component({
@@ -9,12 +9,7 @@ import { FirebaseService } from '../../services/firebase.service';
 })
 export class CourseDialogComponent implements OnInit {
 
-  courseForm = new FormGroup({
-    courseName: new FormControl(''),
-    courseDescription: new FormControl(''),
-    courseSubjects: new FormControl(),
-  });
-
+  // TODO: research about FormGroup, FormControl and their implementation
   courseName = '';
   courseDescription = '';
   subjects = new FormControl();
@@ -43,7 +38,6 @@ export class CourseDialogComponent implements OnInit {
       description: this.courseDescription,
       subjects: this.subjects.value,
     };
-    console.log(data)
     this.firebase.create('courses', data);
   }
 

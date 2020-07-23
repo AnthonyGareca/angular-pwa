@@ -16,9 +16,7 @@ export class CourseDialogComponent implements OnInit {
 
   subjectList = [];
 
-  constructor(
-    @Inject(MAT_DIALOG_DATA) public data: Object,
-    private firebase: FirebaseService) { }
+  constructor(private firebase: FirebaseService) { }
 
   ngOnInit(): void {
     this.firebase.getAll('subjects').subscribe(subjectsSnapshot => {

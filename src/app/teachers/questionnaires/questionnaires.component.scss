@@ -1,0 +1,30 @@
+section {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  position: relative;
+  height: 100vh;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.floating-action-buttons {
+  padding: 10px;
+  position: sticky;
+  z-index: 1;
+  bottom: 0;
+}
+
+mat-card {
+  margin: 1em;
+}
+
+.header-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -10,6 +10,7 @@ export class TeachersComponent implements OnInit {
 
   title: string =  "Teachers!";
   routeItems: RouteItem[] = [
+    new RouteItem('Courses', 'courses'),
     new RouteItem('Subjects', 'subjects'),
     new RouteItem('Students', 'students'),
   ];

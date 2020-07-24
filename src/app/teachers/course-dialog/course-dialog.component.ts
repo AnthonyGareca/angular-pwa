@@ -1,6 +1,6 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef } from '@angular/material/dialog';
 import { FirebaseService } from '../../services/firebase.service';
 @Component({
   selector: 'app-course-dialog',
@@ -16,7 +16,10 @@ export class CourseDialogComponent implements OnInit {
 
   subjectList = [];
 
-  constructor(private firebase: FirebaseService) { }
+  constructor(
+    private firebase: FirebaseService,
+    private dialogRef: MatDialogRef<CourseDialogComponent>,
+    ) { }
 
   ngOnInit(): void {
     this.firebase.getAll('subjects').subscribe(subjectsSnapshot => {
@@ -30,13 +33,14 @@ export class CourseDialogComponent implements OnInit {
     });
   }
 
-  saveCourse() {
+  async saveCourse() {
     const data = {
       name: this.courseName,
       description: this.courseDescription,
       subjects: this.subjects.value,
     };
-    this.firebase.create('courses', data);
+    await this.firebase.create('courses', data);
+    this.dialogRef.close();
   }
 
 }

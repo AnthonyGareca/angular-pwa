@@ -1,0 +1,36 @@
+<div>
+  <h3>Course</h3>
+  <div>
+    <mat-form-field appearance="legacy">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Name" [(ngModel)]="questionaryName">
+      <mat-icon matSuffix>pencil</mat-icon>
+      <mat-hint>Name of the Questionary</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-label>Description</mat-label>
+      <textarea matInput [(ngModel)]="questionaryDescription"></textarea>
+    </mat-form-field>
+
+    <div>
+      <h4>Questions <span>{{questionsList.length}}</span></h4>
+      <mat-list #shoes>
+        <mat-list-item *ngFor="let question of questionsList">
+          {{question.question}}
+        </mat-list-item>
+      </mat-list>
+      <mat-form-field>
+        <mat-label>New Question</mat-label>
+        <input matInput placeholder="new Question" [(ngModel)]="newQuestion">
+      </mat-form-field>
+      <button mat-button (click)="saveQuestion()" color="primary">Add</button>
+    </div>
+
+  </div>
+  <div>
+    <button mat-button mat-dialog-close>Cancel</button>
+    <!-- TODO: Add logic to close dialog after save data -->
+    <button mat-button class="primary" (click)="saveQuestionary()" mat-dialog-close>Save</button>
+  <div>
+</div>

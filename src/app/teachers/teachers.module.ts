@@ -12,6 +12,7 @@ import { StudentsComponent } from './students/students.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CourseDialogComponent } from './course-dialog/course-dialog.component';
 import { QuestionnairesComponent } from './questionnaires/questionnaires.component';
+import { QuestionaryDialogComponent } from './questionary-dialog/questionary-dialog.component';
 
 const routes: Routes = [
   {
@@ -50,6 +51,7 @@ const routes: Routes = [
     CoursesComponent,
     CourseDialogComponent,
     QuestionnairesComponent,
+    QuestionaryDialogComponent,
   ],
   imports: [
     CommonModule,

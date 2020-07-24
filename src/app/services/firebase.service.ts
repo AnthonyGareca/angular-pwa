@@ -20,6 +20,10 @@ export class FirebaseService {
     return this.firestore.collection(resource).snapshotChanges();
   }
 
+  public getFilterdData(resource: string, key: string, value: string) {
+    return this.firestore.collection(resource, ref => ref.where(key, '==', value)).snapshotChanges();
+  }
+
   public update(resource: string, id: string, data: Object) {
     return this.firestore.collection(resource).doc(id).set(data);
   }

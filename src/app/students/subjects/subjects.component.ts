@@ -9,7 +9,7 @@ import {SubjectService} from '../../services/subject.service';
 })
 export class SubjectsComponent implements OnInit {
 
-  studentId = "pOnk5GMS0cqpTsOFXYT3";
+  studentId = localStorage.getItem("studentId");
   courseId = "";
   subjectList = [];
   constructor(private courseService: CourseService, private subjectService: SubjectService) { 

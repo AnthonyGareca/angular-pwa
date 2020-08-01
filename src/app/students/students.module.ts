@@ -11,6 +11,7 @@ import { TasksComponent } from './tasks/tasks.component';
 import { SubjectsComponent } from './subjects/subjects.component';
 import { TaskComponent } from './task/task.component';
 import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -50,6 +51,8 @@ const routes: Routes = [
     MaterialDependenciesModule,
     MatInputModule,
     MatChipsModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes),
   ],
   exports: [],

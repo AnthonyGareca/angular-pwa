@@ -2,14 +2,20 @@
     <div class="courses-container" *ngFor="let task of taskList">
       <mat-card [routerLink] = "[task.id]">
         <mat-card-header>
+            <div mat-card-avatar class="header-image">
+                <mat-icon>menu_book</mat-icon>
+              </div>
           <mat-card-title >{{task.data.name}}</mat-card-title>
-          <mat-card-subtitle color="primary" *ngIf="task.data.delivered; else elseBlock">Entregado</mat-card-subtitle>
+          <mat-card-subtitle *ngIf="task.delivered; else elseBlock">Entregado</mat-card-subtitle>
           <ng-template #elseBlock>
               <mat-card-subtitle color="accent">
                 Por entregar 
               </mat-card-subtitle>
           </ng-template>
         </mat-card-header>
+        <mat-card-content>
+            {{task.data.description}}
+          </mat-card-content>
       </mat-card>
     </div>
   </section>

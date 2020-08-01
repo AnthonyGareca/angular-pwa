@@ -11,7 +11,7 @@
   </mat-drawer>
 
   <mat-drawer-content class="content-container">
-    <mat-toolbar>
+    <mat-toolbar color="primary">
       <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
         (click)="drawer.toggle()">
         <mat-icon>menu</mat-icon>
@@ -19,6 +19,5 @@
       <span>{{title}}</span>
     </mat-toolbar>
     <router-outlet></router-outlet>
-
   </mat-drawer-content>
 </mat-drawer-container>

@@ -1,1 +1,15 @@
-<p>tasks works!</p>
+<section>
+    <div class="courses-container" *ngFor="let task of taskList">
+      <mat-card [routerLink] = "[task.id]">
+        <mat-card-header>
+          <mat-card-title >{{task.data.name}}</mat-card-title>
+          <mat-card-subtitle color="primary" *ngIf="task.data.delivered; else elseBlock">Entregado</mat-card-subtitle>
+          <ng-template #elseBlock>
+              <mat-card-subtitle color="accent">
+                Por entregar 
+              </mat-card-subtitle>
+          </ng-template>
+        </mat-card-header>
+      </mat-card>
+    </div>
+  </section>

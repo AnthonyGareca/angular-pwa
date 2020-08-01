@@ -1,0 +1,14 @@
+<section>
+  <div class="courses-container" *ngFor="let subject of subjectList">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{subject.data.name}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+            {{subject.data.description}}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</section>

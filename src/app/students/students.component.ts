@@ -9,6 +9,11 @@ import { RouteItem } from '../model/RouteItem';
 })
 export class StudentsComponent implements OnInit {
 
+  title: string =  "Student!";
+  routeItems: RouteItem[] = [
+    new RouteItem('Subjects', 'subjects'),
+    new RouteItem('Tasks', 'tasks')
+  ];
   constructor() { }
 
   ngOnInit(): void {

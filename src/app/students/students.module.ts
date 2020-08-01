@@ -2,12 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
-
+import { CustomComponentsModule } from '../components/custom-components.module';
 import { MaterialDependenciesModule } from '../components/material-dependencies.module';
+import {MatChipsModule} from '@angular/material/chips';
 
 import { StudentsComponent } from './students.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { SubjectsComponent } from './subjects/subjects.component';
+import { TaskComponent } from './task/task.component';
+import { MatInputModule } from '@angular/material/input';
 
 const routes: Routes = [
   {
@@ -26,6 +29,10 @@ const routes: Routes = [
         path: 'tasks',
         component: TasksComponent,
       },
+      {
+        path: 'tasks/:id',
+        component: TaskComponent,
+      },
     ],
   },
 ];
@@ -34,11 +41,15 @@ const routes: Routes = [
   declarations: [
     StudentsComponent,
     SubjectsComponent,
-    TasksComponent
+    TasksComponent,
+    TaskComponent
   ],
   imports: [
     CommonModule,
+    CustomComponentsModule,
     MaterialDependenciesModule,
+    MatInputModule,
+    MatChipsModule,
     RouterModule.forChild(routes),
   ],
   exports: [],

@@ -1,22 +1,15 @@
 <section>
-    <mat-card >
-      <mat-card-header>
-        <mat-card-title>Actividad suma</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p>
-          Se entrega maniana
-        </p>
-      </mat-card-content>
-    </mat-card>
-    <mat-card [routerLink]=" [ 'tasks' ]">
-      <mat-card-header>
-        <mat-card-title>Actividad resta</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p>
-          Se entrega Hoy
-        </p>
-      </mat-card-content>
-    </mat-card>
+    <div class="courses-container" *ngFor="let task of taskList">
+      <mat-card [routerLink] = "[task.id]">
+        <mat-card-header>
+          <mat-card-title >{{task.data.name}}</mat-card-title>
+          <mat-card-subtitle color="primary" *ngIf="task.data.delivered; else elseBlock">Entregado</mat-card-subtitle>
+          <ng-template #elseBlock>
+              <mat-card-subtitle color="accent">
+                Por entregar 
+              </mat-card-subtitle>
+          </ng-template>
+        </mat-card-header>
+      </mat-card>
+    </div>
   </section>

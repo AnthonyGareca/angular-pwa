@@ -14,7 +14,9 @@ export class StudentsComponent implements OnInit {
     new RouteItem('Subjects', 'subjects'),
     new RouteItem('Tasks', 'tasks')
   ];
-  constructor() { }
+  constructor() {
+    localStorage.setItem("studentId", 'pOnk5GMS0cqpTsOFXYT3');
+   }
 
   ngOnInit(): void {
   }

@@ -1,0 +1,24 @@
+
+<section *ngIf="task">
+  <div class="courses-container"  >
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title >{{task.name}}</mat-card-title>
+        <mat-card-subtitle *ngIf="task.delivered">Entregado</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <form class="example-form" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+          <div *ngFor="let question of task.questions">            
+            <mat-form-field class="example-full-width">
+              <mat-label>{{question.question}}</mat-label>
+              <textarea formControlName="{{question.id}}" matInput></textarea>
+            </mat-form-field>
+          </div>
+          <div [hidden]="task.delivered">
+            <button mat-raised-button  color="primary" type="submit" [disabled]="!myForm.valid">Entregar</button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</section>

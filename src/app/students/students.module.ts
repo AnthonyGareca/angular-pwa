@@ -2,9 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
+import { CustomComponentsModule } from '../components/custom-components.module';
+import { MaterialDependenciesModule } from '../components/material-dependencies.module';
+import {MatChipsModule} from '@angular/material/chips';
+
 import { StudentsComponent } from './students.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { TasksComponent } from './tasks/tasks.component';
+import { SubjectsComponent } from './subjects/subjects.component';
+import { TaskComponent } from './task/task.component';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -13,15 +20,19 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'dashboard',
+        redirectTo: 'subjects',
       },
       {
-        path: 'dashboard',
-        component: DashboardComponent,
+        path: 'subjects',
+        component: SubjectsComponent,
       },
       {
         path: 'tasks',
         component: TasksComponent,
+      },
+      {
+        path: 'tasks/:id',
+        component: TaskComponent,
       },
     ],
   },
@@ -30,9 +41,18 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     StudentsComponent,
+    SubjectsComponent,
+    TasksComponent,
+    TaskComponent
   ],
   imports: [
     CommonModule,
+    CustomComponentsModule,
+    MaterialDependenciesModule,
+    MatInputModule,
+    MatChipsModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes),
   ],
   exports: [],

@@ -47,8 +47,9 @@ export class TeachersComponent implements OnInit {
     const firestore = firebase.firestore();
     messaging.requestPermission()
       .then(() => messaging.getToken().then(async token => {
-        console.log(`token => ${token}`);
-        await firestore.collection('new-response-token-list').add({ token });
+        console.log(` teacher token => ${token}`);
+        const response = await firestore.collection('new-response-token-list').add({ token });
+        console.log('new-response-token-list = ' + response);
       }))
       .catch( err => console.log(`Error => ${err}`));
   }

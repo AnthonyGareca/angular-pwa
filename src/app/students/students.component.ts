@@ -45,8 +45,9 @@ export class StudentsComponent implements OnInit {
     const firestore = firebase.firestore();
     messaging.requestPermission()
       .then(() => messaging.getToken().then(async token => {
-        console.log(`token => ${token}`);
-        await firestore.collection('new-questionary-token-list').add({ token });
+        console.log(`student token => ${token}`);
+        const response = await firestore.collection('new-questionary-token-list').add({ token });
+        console.log('new-questionary-token-list = ' + response);
       }))
       .catch( err => console.log(`Error => ${err}`));
   }
